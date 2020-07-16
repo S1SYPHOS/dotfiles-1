@@ -48,6 +48,7 @@
 [vivid](https://github.com/sharkdp/vivid) | LS_COLORS generator
 [bat](https://github.com/sharkdp/bat) | cat(1) clone with wings
 [fzf](https://github.com/junegunn/fzf) | a command-line fuzzy finder
+[delta](https://github.com/dandavison/delta) | a viewer for git and diff output
 
 #### WM related
 
