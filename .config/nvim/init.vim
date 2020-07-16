@@ -1,9 +1,13 @@
 call plug#begin(expand('~/.config/nvim/plugged'))
 
+" Plug 'google/vim-maktaba'
+" Plug 'google/vim-codefmt'
+" Plug 'google/vim-glaive'
+
 " intellisense engine
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" color theme
+" colortheme
 Plug 'gosukiwi/vim-atom-dark'
 
 " file tree
@@ -12,15 +16,11 @@ Plug 'preservim/nerdtree'
 " lightweight statusline
 Plug 'itchyny/lightline.vim'
 
-" fuzzy-finder
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+" editorconfig support
+" Plug 'editorconfig/editorconfig-vim'
 
-" editorconfig
-Plug 'editorconfig/editorconfig-vim'
-
-" comments
-Plug 'preservim/nerdcommenter'
+" commenting
+" Plug 'preservim/nerdcommenter'
 
 call plug#end()
 
@@ -83,7 +83,7 @@ set cmdheight=2
 set mat=2
 set shiftwidth=4
 set showmatch
-set signcolumn=yes
+set signcolumn=number
 set smartindent
 set smarttab
 set softtabstop=0
