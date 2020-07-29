@@ -1,20 +1,19 @@
 # ndless
 export PATH="$HOME/Coding/nspire/Ndless/ndless-sdk/toolchain/install/bin:$HOME/Coding/nspire/Ndless/ndless-sdk/toolchain/../bin:${PATH}"
 
-# path
+# paths
 export PATH="$PATH:/usr/local/sbin/:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/.local/bin"
+export LD_LIBRARY_PATH="/usr/local/lib:/usr/lib/"
 
-# zsh
+# shell
 export ZSH="$HOME/.oh-my-zsh"
-
-# language defaults
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-
-# alacritty
 export TERM="xterm-256color"
 export TERMINAL=alacritty
 export COLORTERM="truecolor"
+
+# language
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # firefox
 export BROWSER='firefox'
@@ -25,6 +24,9 @@ export EDITOR='nvim'
 # pictures
 export PICTURES="$HOME/Pictures"
 
+# pager
+export PAGER=less
+
 # cargo
 export PATH="$PATH:$HOME/.cargo/bin"
 export CARGO_TARGET_DIR="$HOME/.cargo/target"
@@ -34,6 +36,7 @@ export PATH="$PATH:/opt/gradle/bin"
 
 # go
 export GOPATH="$HOME/Coding/go"
+export GOBIN="$HOME/Coding/go/bin"
 export PATH="$PATH:$GOPATH/bin"
 
 # dart
@@ -45,11 +48,5 @@ export GHIDRA_INSTALL_DIR="/opt/ghidra"
 # flutter
 export PATH="$PATH:/opt/flutter/bin"
 
-# cpm
-export CPM_SOURCE_CACHE="$HOME/.cache/CPM"
-
-# ld
-export LD_LIBRARY_PATH="/usr/local/lib:/usr/lib/"
-
-# secret variables
+# secrets 
 source $HOME/.zsecrets
