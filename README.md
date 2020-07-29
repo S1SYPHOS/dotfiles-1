@@ -10,8 +10,6 @@
 
 ***"I use arch btw"***
 
-![fuck it ship it](https://img.shields.io/badge/Fuck%20it-Ship%20it-blueviolet)
-
 </div>
 
 ## Preview
@@ -108,5 +106,6 @@ to your local directory tree. In case you are wondering; this is how it *could* 
 ## Credits
 
 Working on my dotfiles took me many hours and really challenged my lack of creativy, so 
-I wanted mention [@vbe0201](https://github.com/vbe0201/dotfiles), [@Stupremee](https://github.com/Stupremee/dotfiles) &
-[@da-edra](https://github.com/da-edra/dotfiles), who did great work with their dotfiles and inspired me with mine. 
+I wanted mention [@vbe0201](https://github.com/vbe0201/dotfiles), [@Stupremee](https://github.com/Stupremee/dotfiles),
+[@mathiasbynens](https://github.com/mathiasbynens/dotfiles), [@da-edra](https://github.com/da-edra/dotfiles) &
+[@lewagon](https://github.com/lewagon/dotfiles) who did great work with their dotfiles and inspired me with mine. 

@@ -1,9 +1,9 @@
-# gpg prompt for passphrase in tty
-export GPG_TTY=$(tty)
+ZSH=$HOME/.oh-my-zsh
 
 # don't want coredumps
 ulimit -S -c 0
 
+# completion module
 autoload -U colors && colors
 autoload -Uz compinit
 zstyle ':completion:*' menu select
@@ -12,14 +12,6 @@ compinit
 
 # include hidden files in completions
 _comp_options+=(globdots)
-
-export LS_COLORS="$(vivid generate jellybeans)"
-DISABLE_LS_COLORS=true
-
-HISTFILE="$HOME/.zsh_history"
-HIST_STAMPS="dd/mm/yyyy"
-HISTSIZE=10000
-SAVEHIST=10000
 
 setopt AUTO_CD
 setopt CHASE_LINKS
@@ -30,6 +22,18 @@ setopt HIST_FIND_NO_DUPS
 setopt IGNORE_EOF
 setopt CLOBBER
 setopt EXTENDED_GLOB
+
+# encoding stuff
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+DISABLE_LS_COLORS=true
+export LS_COLORS="$(vivid generate jellybeans)"
+
+HISTFILE="$HOME/.zsh_history"
+HIST_STAMPS="dd/mm/yyyy"
+HISTSIZE=10000
+SAVEHIST=10000
 
 alias cp="cp -i"
 alias rm="rm -i"
@@ -48,15 +52,9 @@ alias packill="sudo pacman -Rcns"
 alias pacmir="sudo reflector --latest 187 -p https --sort rate --save /etc/pacman.d/mirrorlist"
 alias ls="exa"
 alias ps="procs"
+alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
 
-DISABLE_UPDATE_PROMPT=true
-
-plugins=(
-    colorize
-    extract
-    gpg-agent
-    safe-paste
-)
+plugins=(colorize extract gpg-agent safe-paste)
 
 export PATH="${PATH:+${PATH}:}$HOME/.fzf/bin"
 source "$HOME/.fzf/shell/key-bindings.zsh"
