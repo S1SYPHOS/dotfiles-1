@@ -7,7 +7,7 @@ window:
     lines: 0
 
   dynamic_padding: false
-
+  dynamic_title: false
   decorations: full
 
 scrolling:
@@ -135,7 +135,7 @@ schemes:
 
 colors: *falcon
 
-visual_bell:
+bell:
   animation: EaseOutExpo
   duration: 0
 
@@ -145,7 +145,6 @@ selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
   save_to_clipboard: true
 
-dynamic_title: false
 
 cursor:
   style: Block

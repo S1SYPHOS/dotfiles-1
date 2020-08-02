@@ -39,8 +39,6 @@
     corner_radius = 0
     force_xinerama = false
 
-[shortcuts]
-
 [urgency_low]
     background = "#232323"
     foreground = "#a8a8a8"

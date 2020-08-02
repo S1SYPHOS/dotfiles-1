@@ -1,127 +1,114 @@
+set shell=/usr/bin/zsh
+
 call plug#begin(expand('~/.config/nvim/plugged'))
 
 " Plug 'google/vim-maktaba'
 " Plug 'google/vim-codefmt'
 " Plug 'google/vim-glaive'
-
-" intellisense engine
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" colortheme
-Plug 'gosukiwi/vim-atom-dark'
-
-" file tree
+" Plug 'gosukiwi/vim-atom-dark'
+" Plug 'arcticicestudio/nord-vim'
 Plug 'preservim/nerdtree'
-
-" lightweight statusline
 Plug 'itchyny/lightline.vim'
-
-" editorconfig support
 " Plug 'editorconfig/editorconfig-vim'
-
-" commenting
 " Plug 'preservim/nerdcommenter'
 
 call plug#end()
 
-" ignore c/c++ object files
+" ignore c/c++ files
 set wildignore+=*.o,*.obj,*.out,*.elf,*.exe,*.app
 
 " ignore python files
 set wildignore+=*/__pycache__/*,*.pyc
 
-" theme
+" appearance
 set background=dark
-colorscheme atom-dark-256
-
-" shell
-set shell=/usr/bin/zsh
+" colorscheme atom-dark-256
+" colorscheme nord
+colorscheme default
 
 " ---- options ----
 
 syntax enable
-filetype indent on
-
-filetype plugin on
 filetype plugin indent on
 
+set encoding=utf-8
+
 set autochdir
+set viminfo
+set magic
+set showmatch
+set autoread
+
 set nobackup
 set noswapfile
 set nowb
-set encoding=utf-8
-set fileencoding=utf-8
-set fileencodings=utf-8
-set viminfo
-set shortmess+=c
-set updatetime=300
-set termguicolors
-set hidden
-set laststatus=2
-set lazyredraw
 set nowritebackup
+
 set noerrorbells
 set noshowmode
 set novisualbell
-set number
-set display+=lastline
-set ruler
-set wildmenu
-set cindent
-set autoindent
-set backspace=indent,eol,start
-set cursorline
+
+set ignorecase
+set smartcase
 set expandtab
-set foldcolumn=1
-set clipboard=unnamedplus
-set foldenable
-set foldlevelstart=10
-set linebreak
-set listchars=eol:¬,space:·,tab:»\
-set magic
-set cmdheight=2
-set mat=2
-set shiftwidth=4
-set showmatch
-set signcolumn=number
+
 set smartindent
 set smarttab
 set softtabstop=0
 set tabstop=4
-set whichwrap+=<,>,h,l,[,]
-set wrap
-set ignorecase
-set smartcase
+set shiftwidth=2
+set autoindent
+set cindent
+set nojoinspaces
+set linebreak
+set listchars=eol:¬,space:·,tab:»\
+set backspace=indent,eol,start
+
+set laststatus=2
+set display+=lastline
+set signcolumn=number
+set shortmess+=c
+set clipboard=unnamedplus
+set cmdheight=2
+set mat=2
+
+set number
+set ruler
+set hidden
+set cursorline
+set wildmenu
+
+set termguicolors
+set lazyredraw
+
+set foldenable
+set foldlevelstart=10
+set foldcolumn=1
+
 set hlsearch
-set undofile
 set incsearch
 set gdefault
-set nojoinspaces
-set autoread
+
+set whichwrap+=<,>,h,l,[,]
+set wrap
+
+set updatetime=300
 set ttimeout 
 set ttimeoutlen=100
-set nowrap
 
 " store an undo buffer
 set undofile
-set undodir=~/.config/nvim/.vimundo
+set undodir=~/.config/nvim/.undo
 set undolevels=1000
 set undoreload=10000
-
-" disable terminal bell
-set noerrorbells visualbell t_vb=
-autocmd GUIEnter * set visualbell t_vb=
 
 " fix yaml indentation issues
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
-" disable comment insertion on next line
+" disable auto commenting on next line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-" clipboard integration
-noremap <leader>p :read !xsel --clipboard --output<CR>
-noremap <leader>c :w !xsel -ib<CR>
 
 " ---- plugin settings ----
 
@@ -186,6 +173,9 @@ let g:NERDToggleCheckAllLines = 1
 
 let g:mapleader="\<Space>"
 
+" press Enter to add blank line below current line
+map <Enter> o<ESC>
+
 " unbind Ex mode
 noremap Q <nop>
 
@@ -193,14 +183,17 @@ noremap Q <nop>
 noremap <F1> <nop>
 noremap <S-k> <nop>
 
-" toggle file tree
+" ctrl-n to toggle file tree
 map <C-n> :NERDTreeToggle<CR>
 
 " ctrl-backspace to delete last word
 imap <C-BS> <C-W>
 
-" c-space to trigger completion 
-inoremap <silent><expr> <c-space> coc#refresh()
+" map F6 to spellchecking
+map <F6> :setlocal spell! spelllang=en_us<CR>
+
+" ctrl-space to trigger completion 
+inoremap <silent><expr> <C-space> coc#refresh()
 
 " use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
